@@ -11,14 +11,14 @@ mitre-attack: {{mitre_attack}}
 ### Techniques Used
 | ID | Name | Description |
 | --- | --- | --- |
-{% for technique in techniques %}| [[{{technique['name']}}\|{{technique['id']}}]] | {{technique['name']}} | {{ technique['description'] | parse_description(references) }} |
+{% for technique in techniques %}| [[{{technique['link']}}\|{{technique['id']}}]] | {{technique['name']}} | {{ technique['description'] | parse_description(references) }} |
 {% endfor %}
 
 {% if software %}
 ### Software
 | ID | Name | Description |
 | --- | --- | --- |
-{% for sw in software %}| [[{{sw['name']}}\|{{sw['id']}}]] | {{sw['name']}} | {{sw['description'] | parse_description(references) }} |
+{% for sw in software %}| [[{{sw['link']}}\|{{sw['id']}}]] | {{sw['name']}} | {{sw['description'] | parse_description(references) }} |
 {% endfor %}
 {% endif %}
 
@@ -28,4 +28,3 @@ mitre-attack: {{mitre_attack}}
 {% else %}[^{{ref['id']}}]: {{ref['source_name']}}
 {% endif %}
 {% endfor %}
-

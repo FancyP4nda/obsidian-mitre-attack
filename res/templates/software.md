@@ -12,14 +12,14 @@ mitre-attack: {{mitre_attack}}
 ### Techniques Used
 | ID | Name | Use |
 | --- | --- | --- |
-{% for technique in techniques %}| [[{{technique['name']}}\|{{technique['id']}}]] | {{technique['name']}} | {{ technique['description'] | parse_description(references) }} |
+{% for technique in techniques %}| [[{{technique['link']}}\|{{technique['id']}}]] | {{technique['name']}} | {{ technique['description'] | parse_description(references) }} |
 {% endfor %}
 
 {% if groups %}
 ### Groups That Use This Software
 | ID | Name |
 | --- | --- |
-{% for group in groups %}| [[{{group['name']}}\|{{group['id']}}]] | {{group['name']}} |
+{% for group in groups %}| [[{{group['link']}}\|{{group['id']}}]] | {{group['name']}} |
 {% endfor %}
 {% endif %}
 
@@ -29,4 +29,3 @@ mitre-attack: {{mitre_attack}}
 {% else %}[^{{ref['id']}}]: {{ref['source_name']}}
 {% endif %}
 {% endfor %}
-

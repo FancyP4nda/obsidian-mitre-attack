@@ -12,7 +12,7 @@ mitre-attack: {{mitre_attack}}
 ### Techniques Addressed by Mitigation
 | ID | Name | Description |
 | --- | --- | --- |
-{% for technique in techniques %}| [[{{technique['name']}}\|{{technique['id']}}]] | {{technique['name']}} | {{ technique['description'] | parse_description(references) }} |
+{% for technique in techniques %}| [[{{technique['link']}}\|{{technique['id']}}]] | {{technique['name']}} | {{ technique['description'] | parse_description(references) }} |
 {% endfor %}
 
 ## References
@@ -21,4 +21,3 @@ mitre-attack: {{mitre_attack}}
 {% else %}[^{{ref['id']}}]: {{ref['source_name']}}
 {% endif %}
 {% endfor %}
-

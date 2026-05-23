@@ -20,7 +20,7 @@ permissions required:
 ### Procedure Examples
 | ID | Name | Use |
 | --- | --- | --- |
-{% for procedure in procedures %}| [[{{procedure['name']}}\|{{procedure['id']}}]] | {{procedure['name']}} | {{ procedure['description'] | parse_description(references) }} |
+{% for procedure in procedures %}| [[{{procedure['link']}}\|{{procedure['id']}}]] | {{procedure['name']}} | {{ procedure['description'] | parse_description(references) }} |
 {% endfor %}
 {% endif %}
 
@@ -28,7 +28,7 @@ permissions required:
 ### Mitigations
 | ID | Name | Descrption |
 | --- | --- | --- |
-{% for mit in mitigations %}| [[{{mit['name']}}\|{{mit['id']}}]] | {{mit['name']}} | {{mit['description'] | parse_description(references)}} |
+{% for mit in mitigations %}| [[{{mit['link']}}\|{{mit['id']}}]] | {{mit['name']}} | {{mit['description'] | parse_description(references)}} |
 {% endfor %}
 {% endif %}
 
@@ -36,7 +36,7 @@ permissions required:
 ### Sub-techniques
 | ID | Name |
 | --- | --- |
-{% for sbt in subtechniques %}| [[{{sbt.name}}\|{{sbt.id}}]] | {{sbt.name}} |
+{% for sbt in subtechniques %}| [[{{sbt['link']}}\|{{sbt['id']}}]] | {{sbt['name']}} |
 {% endfor %}
 {% endif %}
 
@@ -46,4 +46,3 @@ permissions required:
 {% else %}[^{{ref['id']}}]: {{ref['source_name']}}
 {% endif %}
 {% endfor %}
-

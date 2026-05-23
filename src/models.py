@@ -6,6 +6,8 @@ class MITREObject():
 
     def __init__(self, name):
         self._name = name.replace('/', '／')
+        self._id = ''
+        self._description = ''
         self._references = set()
 
     @property
@@ -50,6 +52,51 @@ class MITRETactic(MITREObject):
 
     def __init__(self, name):
         MITREObject.__init__(self, name)
+        self._internal_id = ''
+        self._shortname = ''
+
+    @property
+    def internal_id(self):
+        return self._internal_id
+
+    @internal_id.setter
+    def internal_id(self, internal_id):
+        self._internal_id = internal_id
+
+    @property
+    def shortname(self):
+        return self._shortname
+
+    @shortname.setter
+    def shortname(self, shortname):
+        self._shortname = shortname
+
+
+class MITREMatrix(MITREObject):
+    """
+    Define a matrix (x-mitre-matrix)
+    """
+
+    def __init__(self, name):
+        MITREObject.__init__(self, name)
+        self._internal_id = ''
+        self._tactic_refs = list()
+
+    @property
+    def internal_id(self):
+        return self._internal_id
+
+    @internal_id.setter
+    def internal_id(self, internal_id):
+        self._internal_id = internal_id
+
+    @property
+    def tactic_refs(self):
+        return self._tactic_refs
+
+    @tactic_refs.setter
+    def tactic_refs(self, tactic_refs):
+        self._tactic_refs = tactic_refs
 
 
 class MITRETechnique(MITREObject):

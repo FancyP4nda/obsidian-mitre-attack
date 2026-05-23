@@ -1,3 +1,37 @@
-venv/
-src/__pycache__/
+# Python bytecode and caches
 __pycache__/
+*.py[cod]
+*$py.class
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+
+# Virtual environments and local environment files
+.venv/
+venv/
+env/
+ENV/
+.env
+*.env
+
+# Packaging and coverage artifacts
+build/
+dist/
+*.egg-info/
+.coverage
+coverage.xml
+htmlcov/
+
+# Generated ATT&CK/Obsidian output
+/enterprise-attack/
+/mobile-attack/
+/ics-attack/
+/.obsidian/
+/mitre-attack-vault/
+/obsidian_vault*/
+
+# Editor and OS noise
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/

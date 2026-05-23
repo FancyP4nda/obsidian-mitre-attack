@@ -1,8 +1,13 @@
 repository-url: https://raw.githubusercontent.com/mitre-attack/attack-stix-data/master
-version: 17.0
+version:
+domains:
+  - enterprise-attack
+  - mobile-attack
+  - ics-attack
 mitre-object-types:
   tactics: true
   techniques: true
   mitigations: true
   groups: true
   software: true
+  matrices: true
